@@ -11,7 +11,14 @@
     "url": "git+https://github.com/sinanbekar/next-github-source.git"
   },
   "bugs": "https://github.com/sinanbekar/next-github-source/issues",
-  "keywords": ["nextjs", "cms", "git", "github", "md", "markdown"],
+  "keywords": [
+    "nextjs",
+    "cms",
+    "git",
+    "github",
+    "md",
+    "markdown"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {

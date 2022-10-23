@@ -7,6 +7,7 @@ import fastGlob from "fast-glob";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import findCacheDir from "find-cache-dir";
 
 export interface Repo {
   remote: string;
@@ -14,7 +15,11 @@ export interface Repo {
 }
 
 const defaultCachePath = (name: string, branch = "HEAD") =>
-  path.join(process.cwd(), ".cache", "next-github-source", name, branch);
+  path.join(
+    findCacheDir({ name: "next-github-source", create: true }) as string,
+    name,
+    branch,
+  );
 
 const isAlreadyCloned = async (remote: Repo["remote"], localPath: string) => {
   if (!fs.existsSync(localPath) || fs.readdirSync(localPath).length === 0) {

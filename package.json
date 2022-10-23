@@ -51,10 +51,12 @@
   },
   "dependencies": {
     "fast-glob": "^3.2.12",
+    "find-cache-dir": "^3.3.2",
     "git-url-parse": "^13.1.0",
     "simple-git": "^3.14.1"
   },
   "devDependencies": {
+    "@types/find-cache-dir": "^3.2.1",
     "@types/git-url-parse": "^9.0.1",
     "@types/node": "^18.7.18",
     "@types/rimraf": "^3.0.2",

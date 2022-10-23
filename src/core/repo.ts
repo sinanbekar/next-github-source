@@ -6,6 +6,7 @@ import gitUrlParse from "git-url-parse";
 import fastGlob from "fast-glob";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
 export interface Repo {
   remote: string;
@@ -31,13 +32,20 @@ export async function getRepo(
 ) {
   const parsedRemote = gitUrlParse(remote);
 
+  if (parsedRemote.protocol === "file") {
+    // for testing
+    remote = fileURLToPath(remote);
+    parsedRemote.owner = path.basename(remote);
+    parsedRemote.name = "";
+  }
+
   if (parsedRemote.source !== "github.com") {
     console.warn("Remote source is not GitHub, use at your own risk.");
   }
 
   const cachePath =
     customCacheDir ||
-    defaultCachePath(`${parsedRemote.owner}/${parsedRemote.name}`, branch);
+    defaultCachePath(path.join(parsedRemote.owner, parsedRemote.name), branch);
 
   let repo: SimpleGit;
 

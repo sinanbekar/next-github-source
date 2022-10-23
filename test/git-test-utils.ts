@@ -10,6 +10,7 @@ import {
   writeFile,
   WriteFileOptions,
 } from "fs";
+import os from "os";
 import rimraf from "rimraf";
 import { simpleGit, SimpleGit } from "simple-git";
 export { simpleGit as newSimpleGit } from "simple-git";
@@ -48,12 +49,9 @@ export const io = {
   },
   mkdtemp(): Promise<string> {
     return new Promise((done, fail) => {
-      mkdtemp(
-        (process.env.TMPDIR || "/tmp/") + "simple-git-test-",
-        (err, path) => {
-          err ? fail(err) : done(path);
-        },
-      );
+      mkdtemp(join(os.tmpdir(), "simple-git-test-"), (err, path) => {
+        err ? fail(err) : done(path);
+      });
     });
   },
   writeFile(

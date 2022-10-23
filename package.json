@@ -1,17 +1,17 @@
 {
-  "name": "pkg-name",
+  "name": "next-github-source",
   "type": "module",
   "version": "0.0.0",
-  "description": "",
+  "description": "Use GitHub repo as CMS in Next.js (similar Hashnode's Github as source)",
   "author": "Sinan Bekar <sinanbekar.work@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/sinanbekar/pkg-name#readme",
+  "homepage": "https://github.com/sinanbekar/next-github-source#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sinanbekar/pkg-name.git"
+    "url": "git+https://github.com/sinanbekar/next-github-source.git"
   },
-  "bugs": "https://github.com/sinanbekar/pkg-name/issues",
-  "keywords": [],
+  "bugs": "https://github.com/sinanbekar/next-github-source/issues",
+  "keywords": ["nextjs", "cms", "git", "github", "md", "markdown"],
   "sideEffects": false,
   "exports": {
     ".": {

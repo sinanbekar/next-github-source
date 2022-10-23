@@ -1,7 +1,7 @@
 {
   "name": "next-github-source",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Use GitHub repo as CMS in Next.js (similar Hashnode's Github as source)",
   "author": "Sinan Bekar <sinanbekar.work@gmail.com>",
   "license": "MIT",
